@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quietune-official</title>
+    <script src="./tailwindcss.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="bg-white text-gray-800 scroll-smooth">
+    <!-- Header -->
+    <header class="text-center pt-40 px-4">
+      <h1
+        id="title"
+        class="text-[60px] sm:text-[100px] md:text-[140px] lg:text-[100px] leading-none"
+      >
+        Quietune
+      </h1>
+      <h2 id="greeting" class="text-sm sm:text-2xl md:text-2xl mt-4 mb-6 text-gray-600"></h2>
+      <p
+        id="description"
+        class="text-sm sm:text-sm max-w-3xl mx-auto text-[#808080] mb-12"
+      >
+        Welcome to Quietune — a minimal and distraction-free desktop music
+        player, designed for calm and focused listening. Quietune runs locally,
+        with no ads or tracking — just you and your music. Thank you for
+        visiting. We hope you enjoy a peaceful experience.
+      </p>
+
+      <!-- Download Buttons -->
+
+      <div class="flex flex-wrap justify-center gap-4 mb-8">
+
+         <a
+          href="https://github.com/dixitparmar-dev/Quietune/releases/download/Quietune/quietune-win64.zip"
+          download
+          class="bg-blue-700 text-white px-6 py-3 text-sm shadow hover:bg-blue-800 transition"
+        >
+          Download for Windows 64-bit
+        </a>
+
+        <a
+          href="https://github.com/dixitparmar-dev/Quietune/releases/download/Quietune/quietune-win32.zip"
+          download
+          class="bg-gray-900 text-white px-6 py-3 text-sm shadow hover:bg-gray-700 transition"
+        >
+          Download for Windows 32-bit
+        </a>
+       
+      </div>
+
+      <!-- GitHub Link -->
+      <a
+        href="https://github.com/dixitparmar-dev"
+        target="_blank"
+        class="text-gray-500 text-sm underline"
+      >
+        View on GitHub
+      </a>
+    </header>
+
+    <!-- App Screenshot -->
+    <section class="flex justify-center py-12 px-4">
+      <img
+        src="./assets/images/interface.png"
+        alt="Quietune App Screenshot"
+        class="w-full max-w-2xl rounded-xl shadow-md"
+      />
+    </section>
+
+    <!-- Why Quietune -->
+    <section class="max-w-3xl mx-auto text-center px-6 py-10 text-gray-600">
+      <h3 class="text-2xl font-medium mb-4">Why Quietune?</h3>
+      <p class="text-sm sm:text-sm">
+        Quietune is built for people who value simplicity, focus, and peace of
+        mind. Whether you’re working, studying, or relaxing — Quietune provides
+        a clean space to enjoy your music, without distractions.
+      </p>
+    </section>
+
+    <!-- Features -->
+    <section
+      class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 gap-12 text-gray-700"
+    >
+      <div>
+        <h4 class="text-lg sm:text-lg mb-2 font-medium text-gray-600">Smart Day/Night Mode</h4>
+        <p class="text-[#808080] text-sm">
+          Automatically matches your system theme to keep your environment
+          comfortable and calm at all hours.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-lg sm:text-xl mb-2 font-medium text-gray-600">Playlist & Search</h4>
+        <p class="text-[#808080] text-sm"> 
+          Find your music easily and create playlists in an interface designed
+          for clarity and calmness.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-lg sm:text-xl mb-2 font-medium text-gray-600">Shuffle & Infinite Play</h4>
+        <p class="text-[#808080] text-sm">
+          Play your songs endlessly or randomly — quietly tailored to your flow.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-lg sm:text-xl mb-2 font-medium text-gray-600">Keyboard Shortcuts & Volume</h4>
+        <p class="text-[#808080] text-sm">
+          Respectfully control your playback and volume with smooth shortcut
+          support.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 text-[10px] text-gray-500">
+      Designed and developed with peace ✦ by Dixit Parmar
+    </footer>
+
+    <!-- Script: Time-based Greeting -->
+    <script>
+      const hr = new Date().getHours();
+      const greeting =
+        hr >= 5 && hr < 12
+          ? "Good morning, Sir / Ma’am."
+          : hr < 17
+          ? "Good afternoon, Sir / Ma’am."
+          : hr < 21
+          ? "Good evening, Sir / Ma’am."
+          : "Good night, Sir / Ma’am.";
+      document.getElementById("greeting").textContent = greeting;
+    </script>
+  </body>
+</html>
