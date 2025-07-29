@@ -57,6 +57,15 @@
       >
         View on GitHub
       </a>
+
+        <!-- itch.io Link -->
+      <a
+        href="https://dixitdev.itch.io/quietune"
+        target="_blank"
+        class="text-red-500 text-sm hover:underline ml-6"
+      >
+        View on itch.io
+      </a>
     </header>
 
     <!-- App Screenshot -->
@@ -119,14 +128,18 @@
     <!-- Script: Time-based Greeting -->
     <script>
       const hr = new Date().getHours();
-      const greeting =
-        hr >= 5 && hr < 12
-          ? "Good morning, Sir / Ma’am."
-          : hr < 17
-          ? "Good afternoon, Sir / Ma’am."
-          : hr < 21
-          ? "Good evening, Sir / Ma’am."
-          : "Good night, Sir / Ma’am.";
+      let greeting = "";
+
+      if (hr >= 5 && hr < 12) {
+        greeting = "Good morning, Sir / Ma'am.";
+      } else if (hr >= 12 && hr < 17) {
+        greeting = "Good afternoon, Sir / Ma'am.";
+      } else if (hr >= 17 && hr < 21) {
+        greeting = "Good evening, Sir / Ma'am.";
+      } else {
+        greeting = "Welcome, Sir / Ma'am.";
+      }
+
       document.getElementById("greeting").textContent = greeting;
     </script>
   </body>
