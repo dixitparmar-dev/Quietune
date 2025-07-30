@@ -1,40 +1,27 @@
-# Quietune
-
-# End User License Agreement (EULA)
-
-Hello! 👋
-
-Thanks for installing this free music player. It’s designed to help you enjoy your favorite music in a clean, simple way — without any ads, tracking, or data collection.
+# Quietune - Local music player
+A calm and minimal music player for your desktop.
 
 ---
 
-## 1. 💖 100% Free
-This app is completely free for personal use.  
-No charges, no subscriptions, no catches.
+## 🌐 Live Website  
+[🔗 Visit Website](https://dixitparmar-dev.github.io/Quietune/)
 
 ---
 
-## 2. 🔒 We Respect Your Privacy
-This app does **not collect any data**, personal or otherwise.  
-Everything stays on your device.
+## 📸 Preview  
+
+![Quietune Screenshot](./assets/images/interface1.png)
 
 ---
 
-## 3. 🙌 Use Freely
-Feel free to use and share this app with others —  
-as long as it stays free and **unmodified**.
 
----
+## ✨ Features
 
-## 4. ❤️ Just Be Fair
-Please don’t try to hack, break, or resell the app.  
-It was made with love, so let’s keep it nice for everyone.
+- Smart Day/Night Mode based on system theme
+- Playlist creation & easy music search
+- Shuffle & Infinite playback
+- Keyboard shortcuts and volume control
+- Minimal and clean UI designed for focus
 
----
 
-By installing or using this app, you agree to use it kindly and respectfully.
-
-**Enjoy the music! 🎶**
-
-— Made with ❤️ by Dixit Parmar
 
