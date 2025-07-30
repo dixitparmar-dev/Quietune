@@ -3,144 +3,562 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quietune-official</title>
+    <title>Quietune</title>
     <script src="./tailwindcss.js"></script>
     <link rel="stylesheet" href="./style.css" />
+    <style>
+      /* Extra styling to ensure smooth transitions */
+      #sliderTrack {
+        display: flex;
+        transition: transform 0.4s ease;
+        will-change: transform;
+      }
+    </style>
+
+    <link rel="stylesheet" href="./style.css">
   </head>
-  <body class="bg-white text-gray-800 scroll-smooth">
-    <!-- Header -->
-    <header class="text-center pt-40 px-4">
+
+  <body class="bg-[#111111] scroll-smooth select-none">
+    <!-- Logo / Name -->
+    <header class="text-center pt-[10%] lg:pt-[2%] px-4">
       <h1
-        id="title"
-        class="text-[60px] sm:text-[100px] md:text-[140px] lg:text-[100px] leading-none"
+        class="text-[60px] sm:text-[100px] md:text-[120px] lg:text-[180px] text-[#f5f5f5]"
       >
-        Quietune
+        Q
       </h1>
-      <h2 id="greeting" class="text-sm sm:text-2xl md:text-2xl mt-4 mb-6 text-gray-600"></h2>
-      <p
-        id="description"
-        class="text-sm sm:text-sm max-w-3xl mx-auto text-[#808080] mb-12"
-      >
-        Welcome to Quietune — a minimal and distraction-free desktop music
-        player, designed for calm and focused listening. Quietune runs locally,
-        with no ads or tracking — just you and your music. Thank you for
-        visiting. We hope you enjoy a peaceful experience.
+
+    </header>
+
+    <!-- Why Quietune -->
+    <section class="max-w-5xl mx-auto text-center px-6 py-10">
+      <h2 class="text-xl mb-4 text-[#f5f5f5]">What is Quietune?</h2>
+      <p class="text-[10px] text-[#808080]">
+        Quietune is a peaceful and beautifully crafted music player made for
+        those who love a clean and focused way to enjoy their music. With a
+        unique design and a calm experience, it lets you listen without
+        distractions, noise, or clutter. No ads, no chaos — just your music,
+        your moment. Quietune isn’t trying to be the biggest, just something
+        truly different.
       </p>
+    </section>
 
-      <!-- Download Buttons -->
+    <!-- Arrow SVG -->
+    <div class="mt-4">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-6 h-6 mx-auto text-[#f5f5f5]"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="icon icon-tabler icons-tabler-outline icon-tabler-square-rounded-arrow-down"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M8 12l4 4l4 -4" />
+        <path d="M12 8v8" />
+        <path
+          d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z"
+        />
+      </svg>
+    </div>
 
-      <div class="flex flex-wrap justify-center gap-4 mb-8">
+    <!-- Carousel -->
+    <section class="w-full flex justify-center py-16">
+      <div
+        class="relative w-[90%] h-[500px] lg:h-[650px] overflow-hidden rounded-2xl"
+      >
+        <div
+          id="sliderTrack"
+          class="flex transition-transform duration-500 ease-in-out h-full"
+        >
+          <div
+            class="min-w-full h-full flex items-center justify-center bg-black"
+          >
+            <img
+              src="./assets/images/interface1.png"
+              class="w-full h-full object-cover text-[#f5f5f5]"
+              alt="slide 1"
+            />
+          </div>
+          <div
+            class="min-w-full h-full flex items-center justify-center bg-black"
+          >
+            <img
+              src="./assets/images/interface2.png"
+              class="w-full h-full object-cover text-[#f5f5f5]"
+              alt="slide 2"
+            />
+          </div>
+          <div
+            class="min-w-full h-full flex items-center justify-center bg-black"
+          >
+            <img
+              src="./assets/images/interface3.png"
+              class="w-full h-full object-cover text-[#f5f5f5]"
+              alt="slide 3"
+            />
+          </div>
+        </div>
 
-         <a
+        <!-- Navigation Buttons -->
+        <div class="absolute bottom-4 right-4 flex gap-2">
+          <button
+            id="prevBtn"
+            class="bg-[#111]/50 text-[#f5f5f5] text-xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#111]/80 cursor-pointer"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.2426 6.34317L14.8284 4.92896L7.75739 12L14.8285 19.0711L16.2427 17.6569L10.5858 12L16.2426 6.34317Z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+          <button
+            id="nextBtn"
+            class="bg-[#111]/50 backdrop-blur text-[#f5f5f5] text-xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#111]/80 cursor-pointer"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10.5858 6.34317L12 4.92896L19.0711 12L12 19.0711L10.5858 17.6569L16.2427 12L10.5858 6.34317Z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="text-center py-12">
+      <div class="flex flex-wrap justify-center gap-4 mb-6">
+        <a
           href="https://github.com/dixitparmar-dev/Quietune/releases/download/Quietune/quietune-win64.zip"
           download
-          class="bg-blue-700 text-white px-6 py-3 text-sm shadow hover:bg-blue-800 transition"
+          class="bg-[#2F42D3] text-white px-14 py-4 text-[12px] hover:bg-blue-800 transition inline-flex items-center gap-2 rounded-lg"
         >
-          Download for Windows 64-bit
+          <!-- SVG ICON -->
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="shrink-0"
+          >
+            <g>
+              <rect
+                width="11.294"
+                height="11.294"
+                fill="#F5F5F5"
+                fill-rule="evenodd"
+              />
+              <rect
+                width="11.294"
+                height="11.294"
+                fill="#F5F5F5"
+                fill-rule="evenodd"
+                transform="translate(12.706 0)"
+              />
+              <rect
+                width="11.294"
+                height="11.294"
+                fill="#F5F5F5"
+                fill-rule="evenodd"
+                transform="translate(0 12.706)"
+              />
+              <rect
+                width="11.294"
+                height="11.294"
+                fill="#F5F5F5"
+                fill-rule="evenodd"
+                transform="translate(12.706 12.706)"
+              />
+            </g>
+          </svg>
+
+          <!-- TEXT -->
+          Download for 64-bit
         </a>
 
         <a
           href="https://github.com/dixitparmar-dev/Quietune/releases/download/Quietune/quietune-win32.zip"
           download
-          class="bg-gray-900 text-white px-6 py-3 text-sm shadow hover:bg-gray-700 transition"
+          class="bg-[#222] text-white px-14 py-4 text-[12px] hover:bg-[#333] transition inline-flex items-center gap-2 rounded-lg"
         >
-          Download for Windows 32-bit
+          <!-- SVG ICON -->
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="shrink-0"
+          >
+            <g>
+              <rect
+                width="11.294"
+                height="11.294"
+                fill="#F5F5F5"
+                fill-rule="evenodd"
+              />
+              <rect
+                width="11.294"
+                height="11.294"
+                fill="#F5F5F5"
+                fill-rule="evenodd"
+                transform="translate(12.706 0)"
+              />
+              <rect
+                width="11.294"
+                height="11.294"
+                fill="#F5F5F5"
+                fill-rule="evenodd"
+                transform="translate(0 12.706)"
+              />
+              <rect
+                width="11.294"
+                height="11.294"
+                fill="#F5F5F5"
+                fill-rule="evenodd"
+                transform="translate(12.706 12.706)"
+              />
+            </g>
+          </svg>
+
+          <!-- TEXT -->
+          Download for 32-bit
         </a>
-       
       </div>
+      <div>
+        <a
+          href="https://dixitdev.itch.io/quietune"
+          target="_blank"
+          class="inline-flex items-center gap-2 text-[#f5f5f5] hover:text-red-500 text-[10px] hover:underline transition"
+        >
+          <!-- SVG ICON (Itch.io style) -->
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="shrink-0 hover:text-red-500"
+          >
+            <path
+              d="M3.12769 0.125C2.08191 0.700684 0.0192871 2.89221 0 3.46802C0 3.46802 0 4.4187 0 4.4187C0 5.62817 1.2193 6.68604 2.32288 6.68604C3.65302 6.68604 4.75665 5.66833 4.75665 4.45435C4.75665 5.66394 5.82648 6.68604 7.15662 6.68604C8.48676 6.68604 9.51807 5.66833 9.51807 4.45435C9.51807 5.66394 10.6554 6.68604 11.9855 6.68604C11.9855 6.68604 12.0096 6.68604 12.0096 6.68604C13.3398 6.68604 14.4771 5.66833 14.4771 4.45435C14.4771 5.66394 15.5132 6.68604 16.8386 6.68604C18.1639 6.68604 19.2385 5.66833 19.2385 4.45435C19.2385 5.66394 20.347 6.68604 21.6723 6.68604C22.7807 6.68604 24 5.62378 24 4.4187C24 4.4187 24 3.46802 24 3.46802C23.9807 2.89221 21.9181 0.696289 20.8723 0.120483C17.6241 0.0178223 15.3687 0 12.0048 0C8.64099 0 4.05304 0.0490723 3.12769 0.125ZM9.50372 6.12354C8.44348 7.8374 5.74951 7.85083 4.69409 6.13245C4.05792 7.16345 2.61212 7.56519 1.9953 7.36877C1.80731 9.16309 1.33502 17.9512 2.84827 19.3839C6.70374 20.2186 17.4073 20.1918 21.1519 19.3839C22.6748 17.9423 22.1784 9.02917 22.0049 7.36877C21.3832 7.56519 19.9374 7.16345 19.3061 6.13245C18.2458 7.85083 15.5567 7.83301 14.4965 6.12354C14.1543 6.6814 13.3881 7.41345 12.0001 7.41345C11.4989 7.42676 10.9977 7.31519 10.5591 7.08765C10.1206 6.85999 9.75433 6.52527 9.50372 6.12354ZM7.49866 8.5249C8.29382 8.5249 8.99744 8.5249 9.86975 9.40869C11.2818 9.27478 12.7083 9.27478 14.1204 9.40869C14.9974 8.52942 15.701 8.52942 16.4915 8.52942C19.0119 8.52942 19.6336 11.9884 20.5348 14.9744C21.3685 17.7505 20.2697 17.8175 18.8962 17.8175C16.8673 17.7461 15.7396 16.3802 15.7396 15.0145C13.8456 15.3002 10.8288 15.4072 8.24084 15.0145C8.24084 16.3802 7.11792 17.7461 5.08423 17.8175C3.71552 17.813 2.61676 17.7461 3.45044 14.9744C4.35168 11.9839 4.97333 8.52942 7.49384 8.52942C7.49384 8.52942 7.49384 8.5249 7.49384 8.5249C7.49384 8.5249 7.49866 8.5249 7.49866 8.5249ZM11.9999 10.6582C11.9999 10.6582 9.86017 12.4792 9.47461 13.1219C9.47461 13.1219 10.8722 13.0684 10.8722 13.0684C10.8722 13.0684 10.8722 14.1976 10.8722 14.1976C10.8722 14.2645 11.8987 14.2065 11.9951 14.2065C12.5541 14.2289 13.118 14.2511 13.118 14.1976C13.118 14.1976 13.118 13.0684 13.118 13.0684C13.118 13.0684 14.5156 13.1219 14.5156 13.1219C14.13 12.4747 11.9903 10.6582 11.9903 10.6582C11.9903 10.6582 11.9951 10.6582 11.9951 10.6582C11.9951 10.6582 11.9999 10.6582 11.9999 10.6582Z"
+              fill="currentColor"
+            />
+          </svg>
 
-      <!-- GitHub Link -->
-      <a
-        href="https://github.com/dixitparmar-dev"
-        target="_blank"
-        class="text-gray-500 text-sm underline"
-      >
-        View on GitHub
-      </a>
+          <!-- TEXT -->
+          dixitdev.itch.io
+        </a>
 
-        <!-- itch.io Link -->
-      <a
-        href="https://dixitdev.itch.io/quietune"
-        target="_blank"
-        class="text-red-500 text-sm hover:underline ml-6"
-      >
-        View on itch.io
-      </a>
-    </header>
+        <a
+          href="https://github.com/dixitparmar-dev"
+          target="_blank"
+          class="inline-flex items-center gap-2 ml-6 text-white text-[10px] hover:underline hover:text-[#ccc] transition"
+        >
+          <!-- GitHub SVG ICON -->
+          <svg
+            width="16"
+            height="16"
+            xmlns="http://www.w3.org/2000/svg"
+            class="shrink-0"
+            viewBox="0 0 19 19"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9.50781 0C4.25031 0 0 4.35522 0 9.73901C0 14.0449 2.72327 17.6921 6.50122 18.9818C6.97357 19.076 7.14655 18.7726 7.14655 18.5138C7.14655 18.2881 7.13098 17.5122 7.13098 16.7089C4.48621 17.2864 3.9353 15.5457 3.9353 15.5457C3.51031 14.4169 2.88049 14.1277 2.88049 14.1277C2.01489 13.5314 2.9436 13.5314 2.9436 13.5314C3.90381 13.5953 4.40771 14.5294 4.40771 14.5294C5.25763 16.0149 6.62714 15.5951 7.17804 15.3356C7.25671 14.7057 7.50873 14.2705 7.77637 14.0305C5.66693 13.8058 3.44751 12.9648 3.44751 9.22437C3.44751 8.15967 3.82495 7.28906 4.42328 6.60962C4.32886 6.36987 3.99823 5.36804 4.51788 4.03235C4.51788 4.03235 5.32068 3.77417 7.1308 5.03027C7.90576 4.81763 8.70508 4.70886 9.50781 4.70764C10.3107 4.70764 11.129 4.82092 11.8848 5.03027C13.6951 3.77417 14.4979 4.03235 14.4979 4.03235C15.0175 5.36804 14.6866 6.36987 14.5923 6.60962C15.2062 7.28906 15.5682 8.15967 15.5682 9.22437C15.5682 12.9648 13.3488 13.7867 11.2236 14.0305C11.57 14.3379 11.869 14.9158 11.869 15.8352C11.869 17.1444 11.8533 18.1902 11.8533 18.5138C11.8533 18.7726 12.0266 19.076 12.4987 18.9828C16.2767 17.6921 19 14.0449 19 9.73901C19.0156 4.35522 14.7497 0 9.50781 0C9.50781 0 9.50781 0 9.50781 0Z"
+              fill="#F5F5F5"
+              fill-rule="evenodd"
+            />
+          </svg>
 
-    <!-- App Screenshot -->
-    <section class="flex justify-center py-12 px-4">
-      <img
-        src="./assets/images/interface.png"
-        alt="Quietune App Screenshot"
-        class="w-full max-w-2xl rounded-xl shadow-md"
-      />
+          <!-- TEXT -->
+          github.com/dixitparmar-dev
+        </a>
+      </div>
     </section>
 
-    <!-- Why Quietune -->
-    <section class="max-w-3xl mx-auto text-center px-6 py-10 text-gray-600">
-      <h3 class="text-2xl font-medium mb-4">Why Quietune?</h3>
-      <p class="text-sm sm:text-sm">
-        Quietune is built for people who value simplicity, focus, and peace of
-        mind. Whether you’re working, studying, or relaxing — Quietune provides
-        a clean space to enjoy your music, without distractions.
-      </p>
-    </section>
+    <div class="mt-4">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-6 h-6 mx-auto text-[#f5f5f5]"
+      >
+        <path
+          d="M6.34317 7.75732L4.92896 9.17154L12 16.2426L19.0711 9.17157L17.6569 7.75735L12 13.4142L6.34317 7.75732Z"
+          fill="currentColor"
+        />
+      </svg>
+    </div>
 
     <!-- Features -->
+
+    <!-- Features Heading -->
+    <div class="text-center">
+      <h2 class="text-2xl lg:text-3xl text-[#f5f5f5] my-10">Features</h2>
+    </div>
+
+    <!-- Features Section -->
     <section
       class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 gap-12 text-gray-700"
     >
+      <!-- feature #1 -->
       <div>
-        <h4 class="text-lg sm:text-lg mb-2 font-medium text-gray-600">Smart Day/Night Mode</h4>
-        <p class="text-[#808080] text-sm">
-          Automatically matches your system theme to keep your environment
-          comfortable and calm at all hours.
+        <!-- Icon + Text Row -->
+        <h4 class="text-lg mb-2 text-[#f5f5f5] flex items-center gap-2">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="shrink-0"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M3 6C3 4.89543 3.89543 4 5 4H19C20.1046 4 21 4.89543 21 6V14C21 15.1046 20.1046 16 19 16H5C3.89543 16 3 15.1046 3 14V6ZM5 6H19V14H5V6Z"
+              fill="currentColor"
+            />
+            <path
+              d="M2 18C1.44772 18 1 18.4477 1 19C1 19.5523 1.44772 20 2 20H22C22.5523 20 23 19.5523 23 19C23 18.4477 22.5523 18 22 18H2Z"
+              fill="currentColor"
+            />
+          </svg>
+          unique ui experience
+        </h4>
+
+        <!-- Description -->
+        <p class="text-[#808080] text-[10px]">
+          Clean and minimal design that keeps the focus on your music. No
+          clutter, no distractions — just a smooth and calming interface that
+          feels easy to use.
         </p>
       </div>
+
+      <!-- over -->
+
+      <!-- feature #2 -->
       <div>
-        <h4 class="text-lg sm:text-xl mb-2 font-medium text-gray-600">Playlist & Search</h4>
-        <p class="text-[#808080] text-sm"> 
+        <!-- Icon + Text Row -->
+        <h4 class="text-lg mb-2 text-[#f5f5f5] flex items-center gap-2">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15.8787 4.87866H3.87872V6.87866H15.8787V4.87866Z"
+              fill="currentColor"
+            />
+            <path
+              d="M15.8787 8.87866H3.87872V10.8787H15.8787V8.87866Z"
+              fill="currentColor"
+            />
+            <path
+              d="M3.87872 12.8787H11.8787V14.8787H3.87872V12.8787Z"
+              fill="currentColor"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M13.7574 12.7573C12.5858 13.9289 12.5858 15.8284 13.7574 17C14.681 17.9236 16.0571 18.1191 17.1722 17.5864L18.7071 19.1213L20.1213 17.7071L18.5864 16.1722C19.1191 15.057 18.9236 13.681 18 12.7573C16.8284 11.5858 14.9289 11.5858 13.7574 12.7573ZM15.1716 15.5858C15.5621 15.9763 16.1953 15.9763 16.5858 15.5858C16.9763 15.1952 16.9763 14.5621 16.5858 14.1716C16.1953 13.781 15.5621 13.781 15.1716 14.1716C14.7811 14.5621 14.7811 15.1952 15.1716 15.5858Z"
+              fill="currentColor"
+            />
+          </svg>
+          Playlist & Search
+        </h4>
+
+        <!-- Description -->
+        <p class="text-[#808080] text-[10px]">
           Find your music easily and create playlists in an interface designed
           for clarity and calmness.
         </p>
       </div>
+
+      <!-- over -->
+
+      <!-- feature #3 -->
+
       <div>
-        <h4 class="text-lg sm:text-xl mb-2 font-medium text-gray-600">Shuffle & Infinite Play</h4>
-        <p class="text-[#808080] text-sm">
+        <!-- Icon + Text Row -->
+        <h4 class="text-lg mb-2 text-[#f5f5f5] flex items-center gap-2">
+          <svg
+            width="19"
+            height="19"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z"
+              fill="currentColor"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M11 0H13V4.06189C12.6724 4.02104 12.3387 4 12 4C11.6613 4 11.3276 4.02104 11 4.06189V0ZM7.0943 5.68018L4.22173 2.80761L2.80752 4.22183L5.6801 7.09441C6.09071 6.56618 6.56608 6.0908 7.0943 5.68018ZM4.06189 11H0V13H4.06189C4.02104 12.6724 4 12.3387 4 12C4 11.6613 4.02104 11.3276 4.06189 11ZM5.6801 16.9056L2.80751 19.7782L4.22173 21.1924L7.0943 18.3198C6.56608 17.9092 6.09071 17.4338 5.6801 16.9056ZM11 19.9381V24H13V19.9381C12.6724 19.979 12.3387 20 12 20C11.6613 20 11.3276 19.979 11 19.9381ZM16.9056 18.3199L19.7781 21.1924L21.1923 19.7782L18.3198 16.9057C17.9092 17.4339 17.4338 17.9093 16.9056 18.3199ZM19.9381 13H24V11H19.9381C19.979 11.3276 20 11.6613 20 12C20 12.3387 19.979 12.6724 19.9381 13ZM18.3198 7.0943L21.1923 4.22183L19.7781 2.80762L16.9056 5.6801C17.4338 6.09071 17.9092 6.56608 18.3198 7.0943Z"
+              fill="currentColor"
+            />
+          </svg>
+          Smart Day / Night Mode
+        </h4>
+
+        <!-- Description -->
+        <p class="text-[#808080] text-[10px]">
+          Adapts to your system’s theme based on time, ensuring a calm
+          experience day or night.
+        </p>
+      </div>
+
+      <!-- over -->
+
+      <!-- feature #4 -->
+
+      <div>
+        <!-- Icon + Text Row -->
+        <h4 class="text-lg mb-2 text-[#f5f5f5] flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-keyboard"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M2 6m0 2a2 2 0 0 1 2 -2h16a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2z"
+            />
+            <path d="M6 10l0 .01" />
+            <path d="M10 10l0 .01" />
+            <path d="M14 10l0 .01" />
+            <path d="M18 10l0 .01" />
+            <path d="M6 14l0 .01" />
+            <path d="M18 14l0 .01" />
+            <path d="M10 14l4 .01" />
+          </svg>
+          Keyboard Shortcuts & Volume
+        </h4>
+
+        <!-- Description -->
+        <p class="text-[#808080] text-[10px]">
+          Take control of your playback and volume with seamless keyboard
+          shortcut support.
+        </p>
+      </div>
+
+      <!-- over -->
+
+      <!-- feature #5 -->
+
+      <div>
+        <!-- Icon + Text Row -->
+        <h4 class="text-lg mb-2 text-[#f5f5f5] flex items-center gap-2">
+          <svg
+            width="19"
+            height="19"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M14.9451 7.05518C14.9451 5.95061 15.8405 5.05518 16.9451 5.05518C18.0496 5.05518 18.9451 5.95061 18.9451 7.05518C18.9451 8.15975 18.0496 9.05518 16.9451 9.05518C15.8405 9.05518 14.9451 8.15975 14.9451 7.05518Z"
+              fill="currentColor"
+            />
+            <path
+              d="M16.9451 14.8921C15.8405 14.8921 14.9451 15.7875 14.9451 16.8921C14.9451 17.9967 15.8405 18.8921 16.9451 18.8921C18.0496 18.8921 18.9451 17.9967 18.9451 16.8921C18.9451 15.7875 18.0496 14.8921 16.9451 14.8921Z"
+              fill="currentColor"
+            />
+            <path
+              d="M5.05518 16.8921C5.05518 15.7875 5.95061 14.8921 7.05518 14.8921C8.15975 14.8921 9.05518 15.7875 9.05518 16.8921C9.05518 17.9967 8.15975 18.8921 7.05518 18.8921C5.95061 18.8921 5.05518 17.9967 5.05518 16.8921Z"
+              fill="currentColor"
+            />
+            <path
+              d="M7.05518 5.05518C5.95061 5.05518 5.05518 5.95061 5.05518 7.05518C5.05518 8.15975 5.95061 9.05518 7.05518 9.05518C8.15975 9.05518 9.05518 8.15975 9.05518 7.05518C9.05518 5.95061 8.15975 5.05518 7.05518 5.05518Z"
+              fill="currentColor"
+            />
+            <path
+              d="M10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12Z"
+              fill="currentColor"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M1 4C1 2.34315 2.34315 1 4 1H20C21.6569 1 23 2.34315 23 4V20C23 21.6569 21.6569 23 20 23H4C2.34315 23 1 21.6569 1 20V4ZM4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3Z"
+              fill="currentColor"
+            />
+          </svg>
+          Shuffle & Infinite Play
+        </h4>
+
+        <!-- Description -->
+        <p class="text-[#808080] text-[10px]">
           Play your songs endlessly or randomly — quietly tailored to your flow.
         </p>
       </div>
-      <div>
-        <h4 class="text-lg sm:text-xl mb-2 font-medium text-gray-600">Keyboard Shortcuts & Volume</h4>
-        <p class="text-[#808080] text-sm">
-          Respectfully control your playback and volume with smooth shortcut
-          support.
-        </p>
-      </div>
+
+      <!-- over -->
     </section>
 
     <!-- Footer -->
-    <footer class="text-center py-4 text-[10px] text-gray-500">
+    <footer class="text-center py-4 text-[10px] text-[#555]">
       Designed and developed with peace ✦ by Dixit Parmar
     </footer>
 
-    <!-- Script: Time-based Greeting -->
+    <!-- Script -->
     <script>
-      const hr = new Date().getHours();
-      let greeting = "";
+      document.addEventListener("DOMContentLoaded", () => {
+        const sliderTrack = document.getElementById("sliderTrack");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const totalSlides = sliderTrack.children.length;
+        let currentIndex = 0;
 
-      if (hr >= 5 && hr < 12) {
-        greeting = "Good morning, Sir / Ma'am.";
-      } else if (hr >= 12 && hr < 17) {
-        greeting = "Good afternoon, Sir / Ma'am.";
-      } else if (hr >= 17 && hr < 21) {
-        greeting = "Good evening, Sir / Ma'am.";
-      } else {
-        greeting = "Welcome, Sir / Ma'am.";
-      }
+        function updateSlidePosition() {
+          sliderTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
 
-      document.getElementById("greeting").textContent = greeting;
+        prevBtn.addEventListener("click", () => {
+          currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+          updateSlidePosition();
+        });
+
+        nextBtn.addEventListener("click", () => {
+          currentIndex = (currentIndex + 1) % totalSlides;
+          updateSlidePosition();
+        });
+      });
     </script>
   </body>
 </html>
