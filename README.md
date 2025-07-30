@@ -10,7 +10,7 @@ A calm and minimal music player for your desktop.
 
 ## 📸 Preview  
 
-![Quietune Screenshot](./assets/images/interface1.png)
+![Quietune Screenshot](./assets/images/interface-md.png)
 
 ---
 
